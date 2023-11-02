@@ -1,6 +1,7 @@
 import java.util.*
 
 class Lotto {
+    //================================================================================================
     public fun AutoLotto(): List<Int> {     //자동으로 6개 랜덤 뽑기
         val lottoNumbers = mutableListOf<Int>()
         val random = Random()
@@ -18,8 +19,9 @@ class Lotto {
     }
     //뻔한 숫자조합 피하는 알고리즘 추가? < 좀 애매
 
+    //================================================================================================
 
-    public fun manualLotto(): List<Int> {
+    public fun manualLotto(): List<Int> {       //수동으로 6개 뽑기
         val lottoNumbers = mutableListOf<Int>()
 
         while(lottoNumbers.size < 6){
@@ -44,7 +46,7 @@ class Lotto {
         return lottoNumbers
     }
 
-
+    //================================================================================================
     public fun prizeNumber(): List<Int> {   //당첨번호 6개 + 보너스 1개
         val lottoNumbers = mutableListOf<Int>()
         val random = Random()
@@ -67,4 +69,6 @@ class Lotto {
 
         return lottoNumbers
     }
+
+    //================================================================================================
 }
