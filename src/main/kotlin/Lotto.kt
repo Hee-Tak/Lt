@@ -44,6 +44,26 @@ class Lotto {
         return lottoNumbers
     }
 
+    public fun oneLineInput(): List<Int> {
+
+    }
+
+    public fun eachEnterInput() : List<Int> {
+
+    }
+
+    public fun inputTest() : List<Int> {
+        val numbers = mutableListOf<Int>()
+        println("숫자를 입력하세요. 여러 숫자를 공백으로 구분하거나 각 줄마다 하나의 숫자씩 입력할 수 있습니다. 입력을 완료하려면 빈 줄에서 엔터를 누르세요:")
+        val inputLines = generateSequence { readLine() }.takeWhile { it.isNotEmpty() }
+        val concatenatedIntput = inputLines.joinToString(" ")
+        val inputNumbers = concatenatedIntput.trim().split("\\s+".toRegex()).map { it.toInt() }
+        numbers.addAll(inputNumbers)
+        val num = numbers.sorted()
+        return num
+    }
+
+
     //================================================================================================
     public fun prizeNumber(): List<Int> {   //당첨번호 6개 + 보너스 1개
         val lottoNumbers = mutableListOf<Int>()
