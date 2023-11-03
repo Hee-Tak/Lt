@@ -25,23 +25,21 @@ class Lotto {
         val lottoNumbers = mutableListOf<Int>()
 
         while(lottoNumbers.size < 6){
-            print("1~45의 숫자 6개 입력 (종료 : exit) : ")
+            print("1~45의 숫자 6개 입력 : ")
             val input = readLine()
-            if(input == "exit") break
-            else {
-                try{
-                    val number = input?.toInt()
-                    if(number != null && number in 1..45 && number !in lottoNumbers){
-                        lottoNumbers.add(number)
-                    } else {
-                        println("유효한 숫자를 입력하세요.")
-                    }
-                } catch(e: NumberFormatException){
+            try{
+                val number = input?.toInt()
+                if(number != null && number in 1..45 && number !in lottoNumbers){
+                    lottoNumbers.add(number)
+                } else {
                     println("유효한 숫자를 입력하세요.")
                 }
+            } catch(e: NumberFormatException){
+                println("유효한 숫자를 입력하세요.")
             }
-
         }
+
+
 
         return lottoNumbers
     }
@@ -71,4 +69,9 @@ class Lotto {
     }
 
     //================================================================================================
+
+    /*public fun halfAuto(): List<Int>{
+        val lottoNumbers = mutableListOf<Int>()
+
+    }*/
 }
