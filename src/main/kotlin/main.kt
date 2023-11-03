@@ -7,12 +7,14 @@ fun main() {
         1 -> {
             println("<자동>")
             user = lotto.AutoLotto() //자동
+            lotto.printLotto(user)
         }
 
 
         2 -> {
             println("<수동>")
             user = lotto.manualLotto() //수동
+            lotto.printLotto(user)
         }
 
 

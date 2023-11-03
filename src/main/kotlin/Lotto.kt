@@ -74,4 +74,12 @@ class Lotto {
         val lottoNumbers = mutableListOf<Int>()
 
     }*/
+    //================================================================================================
+
+    public fun printLotto(lotto: List<Int>) {
+        for(element in lotto){
+            print("${element}  ")
+        }
+        println()
+    }
 }
