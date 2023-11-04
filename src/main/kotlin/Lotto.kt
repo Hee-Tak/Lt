@@ -22,6 +22,14 @@ class Lotto {
     //================================================================================================
 
     public fun manualLotto(): List<Int> {       //수동으로 6개 뽑기
+
+    }
+
+    public fun oneLineInput(): List<Int> {
+
+    }
+
+    public fun eachEnterInput() : List<Int> {
         val lottoNumbers = mutableListOf<Int>()
 
         while(lottoNumbers.size < 6){
@@ -44,21 +52,37 @@ class Lotto {
         return lottoNumbers
     }
 
-    public fun oneLineInput(): List<Int> {
-
-    }
-
-    public fun eachEnterInput() : List<Int> {
-
-    }
-
     public fun inputTest() : List<Int> {
+        /*
         val numbers = mutableListOf<Int>()
-        println("숫자를 입력하세요. 여러 숫자를 공백으로 구분하거나 각 줄마다 하나의 숫자씩 입력할 수 있습니다. 입력을 완료하려면 빈 줄에서 엔터를 누르세요:")
+        println("1~45 6개의 숫자를 입력하세요. 여러 숫자를 공백으로 구분하거나 각 줄마다 하나의 숫자씩 입력할 수 있습니다. 입력을 완료하려면 빈 줄에서 엔터를 누르세요:")
         val inputLines = generateSequence { readLine() }.takeWhile { it.isNotEmpty() }
         val concatenatedIntput = inputLines.joinToString(" ")
         val inputNumbers = concatenatedIntput.trim().split("\\s+".toRegex()).map { it.toInt() }
         numbers.addAll(inputNumbers)
+        val num = numbers.sorted()
+        return num
+        */
+        val numbers = mutableListOf<Int>()
+
+        println("숫자를 입력하세요. (1부터 45 사이의 숫자를 6개까지 입력할 수 있습니다)")
+
+        while (numbers.size < 6) {
+            val input = readLine()
+            val inputNumbers = input?.trim()?.split("\\s+".toRegex())?.mapNotNull { it.toIntOrNull() }
+
+            if (inputNumbers != null) {
+                for (number in inputNumbers) {
+                    if (number in 1..45 && numbers.size < 6) {
+                        numbers.add(number)
+                    } else {
+                        println("1부터 45 사이의 유효한 숫자를 입력하세요.")
+                    }
+                }
+            } else {
+                println("유효한 숫자를 입력하세요.")
+            }
+        }
         val num = numbers.sorted()
         return num
     }
