@@ -21,15 +21,35 @@ class Lotto {
 
     //================================================================================================
 
-    public fun manualLotto(): List<Int> {       //수동으로 6개 뽑기
+    public fun manualLotto(): MutableList<Int> {       //수동으로 6개 뽑기
+        val lottoNumbers = mutableListOf<Int>()
+
+        println("<수동 6개>")
+        println("1: 한번에 입력 // 2: 하나씩 입력 // 3: 섞어서 자유롭게 ")
+        val input = readLine()!!.toInt()
+        when(input){
+            1 -> {
+                lottoNumbers = oneLineInput()
+            }
+            2 -> {
+                lottoNumbers = eachEnterInput()
+            }
+            3 -> {
+                lottoNumbers = inputTest()
+            }
+        }
+        return lottoNumbers
+    }
+
+    public fun oneLineInput(): MutableList<Int> {
+        val lottoNumbers = mutableListOf<Int>()
+        val input: String = readLine().toString()
+        val arr = input.split(" ")
+
 
     }
 
-    public fun oneLineInput(): List<Int> {
-
-    }
-
-    public fun eachEnterInput() : List<Int> {
+    public fun eachEnterInput() : MutableList<Int> {
         val lottoNumbers = mutableListOf<Int>()
 
         while(lottoNumbers.size < 6){
@@ -52,7 +72,7 @@ class Lotto {
         return lottoNumbers
     }
 
-    public fun inputTest() : List<Int> {
+    public fun inputTest() : MutableList<Int> {
         /*
         val numbers = mutableListOf<Int>()
         println("1~45 6개의 숫자를 입력하세요. 여러 숫자를 공백으로 구분하거나 각 줄마다 하나의 숫자씩 입력할 수 있습니다. 입력을 완료하려면 빈 줄에서 엔터를 누르세요:")
