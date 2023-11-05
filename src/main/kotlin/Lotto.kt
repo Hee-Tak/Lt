@@ -42,11 +42,12 @@ class Lotto {
     }
 
     public fun oneLineInput(): MutableList<Int> {
-        val lottoNumbers = mutableListOf<Int>()
+        var lottoNumbers = mutableListOf<Int>()
         val input: String = readLine().toString()
         val arr = input.split(" ")
-
-
+        lottoNumbers = arr.map { it.toInt() }.toMutableList()
+        lottoNumbers.sort()
+        return lottoNumbers
     }
 
     public fun eachEnterInput() : MutableList<Int> {
