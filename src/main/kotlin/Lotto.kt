@@ -69,7 +69,7 @@ class Lotto {
         }
 
 
-
+        lottoNumbers.sort()
         return lottoNumbers
     }
 
