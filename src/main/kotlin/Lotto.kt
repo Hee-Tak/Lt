@@ -104,8 +104,8 @@ class Lotto {
                 println("유효한 숫자를 입력하세요.")
             }
         }
-        val num = numbers.sorted()
-        return num
+        numbers.sort()
+        return numbers
     }
 
 
