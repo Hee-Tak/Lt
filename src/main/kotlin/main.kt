@@ -2,7 +2,7 @@ fun main() {
     val lotto = Lotto()
 
 
-    var user : List<Int>
+    var user : MutableList<Int>
     println("1번 : 자동")
     println("2번 : 수동")
     println("3번 : 반자동")

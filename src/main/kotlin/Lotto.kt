@@ -2,7 +2,7 @@ import java.util.*
 
 class Lotto {
     //================================================================================================
-    public fun AutoLotto(): List<Int> {     //자동으로 6개 랜덤 뽑기
+    public fun AutoLotto(): MutableList<Int> {     //자동으로 6개 랜덤 뽑기
         val lottoNumbers = mutableListOf<Int>()
         val random = Random()
 
@@ -110,7 +110,7 @@ class Lotto {
 
 
     //================================================================================================
-    public fun prizeNumber(): List<Int> {   //당첨번호 6개 + 보너스 1개
+    public fun prizeNumber(): MutableList<Int> {   //당첨번호 6개 + 보너스 1개
         val lottoNumbers = mutableListOf<Int>()
         val random = Random()
         while(lottoNumbers.size < 6){
