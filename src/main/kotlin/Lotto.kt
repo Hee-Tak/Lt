@@ -22,7 +22,7 @@ class Lotto {
     //================================================================================================
 
     public fun manualLotto(): MutableList<Int> {       //수동으로 6개 뽑기
-        val lottoNumbers = mutableListOf<Int>()
+        var lottoNumbers = mutableListOf<Int>()
 
         println("<수동 6개>")
         println("1: 한번에 입력 // 2: 하나씩 입력 // 3: 섞어서 자유롭게 ")
