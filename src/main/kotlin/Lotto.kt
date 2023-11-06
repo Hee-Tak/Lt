@@ -14,8 +14,8 @@ class Lotto {
             }
 
         }
-        val lotto = lottoNumbers.sorted()
-        return lotto
+        lottoNumbers.sort()
+        return lottoNumbers
     }
     //뻔한 숫자조합 피하는 알고리즘 추가? < 좀 애매
 
