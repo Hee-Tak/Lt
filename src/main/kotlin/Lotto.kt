@@ -129,7 +129,7 @@ class Lotto {
                 lottoNumbers.add(bonus)
             }
         }
-
+        lottoNumbers.sort()
         return lottoNumbers
     }
 
