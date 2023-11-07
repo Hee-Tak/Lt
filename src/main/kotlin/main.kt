@@ -3,9 +3,8 @@ fun main() {
 
 
     var user : MutableList<Int>
-    println("1번 : 자동")
-    println("2번 : 수동")
-    println("3번 : 반자동")
+    println("1번 : 자동 \t\t 2번 : 수동 \t\t 3번 : 반자동")
+    println("=> ")
 
     var choose = readLine().toString().toInt()
     while(choose in 1..3){
