@@ -3,7 +3,7 @@ fun main() {
 
 
     var user : MutableList<Int>
-    println("1번 : 자동 \t\t 2번 : 수동 \t\t 3번 : 반자동")
+    println("1:자동 \t\t 2:수동 \t\t 3:반자동")
     println("=> ")
 
     var choose = readLine().toString().toInt()
