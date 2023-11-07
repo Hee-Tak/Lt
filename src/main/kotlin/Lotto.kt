@@ -25,7 +25,7 @@ class Lotto {
         var lottoNumbers = mutableListOf<Int>()
 
         println("<수동 6개>")
-        println("1: 한번에 입력 // 2: 하나씩 입력 // 3: 섞어서 자유롭게 ")
+        println("1: Perfect mode // 2: 하나씩 입력 // 3: 섞어서 자유롭게 ")
         print("입력 : ")
         val input = readLine()!!.toInt()
         when(input){
