@@ -51,11 +51,18 @@ class Lotto {
             val arr = input.split(" ")
 
             arr.map { it.toInt() }.forEach {
-                if(it in 1..45){
+                if(it in 1..45 && it !in lottoNumbers && lottoNumbers.size < 6){
                     lottoNumbers.add(it)
+                }
+                if(lottoNumbers.size >= 6){
+                    return@forEach
                 }
             }
             //lottoNumbers = arr.map { it.toInt() }.toMutableList()
+
+
+            println("< 현재 입력된 번호 >")
+            printLotto(lottoNumbers)
         }
         lottoNumbers.sort()
         return lottoNumbers
