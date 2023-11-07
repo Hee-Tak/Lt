@@ -48,7 +48,7 @@ class Lotto {
         while(lottoNumbers.size < 6){
             print("번호를 입력해 주세요. : ")
             val input: String = readLine().toString()
-            val arr = input.split(" ")
+            val arr = input.split(" ").filter{ it.isNotBlank() && it.matches(Regex("-?\\d+")) }
 
             arr.map { it.toInt() }.forEach {
                 if(it in 1..45 && it !in lottoNumbers && lottoNumbers.size < 6){
@@ -58,7 +58,7 @@ class Lotto {
                     return@forEach
                 }
             }
-            //lottoNumbers = arr.map { it.toInt() }.toMutableList()
+            //lottoNumbers =val arr.map { it.toInt() }.toMutableList()
 
 
             println("< 현재 입력된 번호 >")
