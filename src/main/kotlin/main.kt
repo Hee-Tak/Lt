@@ -12,7 +12,7 @@ fun main() {
             choose = temp_choose.toInt()
             break
         } catch (e: NumberFormatException) {
-            println("올바른 형식의 숫자를 입력하세요.")
+            println("올바른 형식으로 숫자 하나를 입력하세요. (1, 2, 3)")
         }
     }
 
