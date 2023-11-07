@@ -45,6 +45,13 @@ class Lotto {
         var lottoNumbers = mutableListOf<Int>()
         val input: String = readLine().toString()
         val arr = input.split(" ")
+
+        arr.map { it.toInt() }.forEach {
+            if(it in 1..45){
+                lottoNumbers.add(it)
+            }
+        }
+
         lottoNumbers = arr.map { it.toInt() }.toMutableList()
         lottoNumbers.sort()
         return lottoNumbers
