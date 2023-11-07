@@ -22,7 +22,7 @@ fun main() {
                 println("<수동>")
                 user = lotto.manualLotto() //수동
                 lotto.printLotto(user)
-                break1
+                break
             }
 
 

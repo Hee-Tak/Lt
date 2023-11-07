@@ -26,6 +26,7 @@ class Lotto {
 
         println("<수동 6개>")
         println("1: 한번에 입력 // 2: 하나씩 입력 // 3: 섞어서 자유롭게 ")
+        print("입력 : ")
         val input = readLine()!!.toInt()
         when(input){
             1 -> {
@@ -43,16 +44,19 @@ class Lotto {
 
     public fun oneLineInput(): MutableList<Int> {
         var lottoNumbers = mutableListOf<Int>()
-        val input: String = readLine().toString()
-        val arr = input.split(" ")
 
-        arr.map { it.toInt() }.forEach {
-            if(it in 1..45){
-                lottoNumbers.add(it)
+        while(lottoNumbers.size < 6){
+            print("번호를 입력해 주세요. : ")
+            val input: String = readLine().toString()
+            val arr = input.split(" ")
+
+            arr.map { it.toInt() }.forEach {
+                if(it in 1..45){
+                    lottoNumbers.add(it)
+                }
             }
+            //lottoNumbers = arr.map { it.toInt() }.toMutableList()
         }
-
-        lottoNumbers = arr.map { it.toInt() }.toMutableList()
         lottoNumbers.sort()
         return lottoNumbers
     }
