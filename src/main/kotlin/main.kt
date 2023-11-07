@@ -1,13 +1,22 @@
 fun main() {
     val lotto = Lotto()
-
-
     var user : MutableList<Int>
-    println("1:자동 \t 2:수동 \t 3:반자동")
-    print("=> ")
-2
-    var choose = readLine().toString().toInt()
-    while(choose in 1..3){
+    var choose : Int
+
+
+    while(true){
+        println("1:자동 \t 2:수동 \t 3:반자동")
+        print("=> ")
+        val temp_choose = readLine().toString().trim()
+        try {
+            choose = temp_choose.toInt()
+            break
+        } catch (e: NumberFormatException) {
+            println("올바른 형식의 숫자를 입력하세요.")
+        }
+    }
+
+    while(true){
         when(choose){
             1 -> {
                 println("<자동>")
