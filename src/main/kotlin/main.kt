@@ -1,8 +1,8 @@
 fun main() {
     val lotto = Lotto()
-
+    var sheet: MutableList<MutableList<Int>> = mutableListOf()
     while(true){
-
+        sheet.add(oneSheet())
     }
     val result = lotto.prizeNumber()
 
@@ -11,7 +11,7 @@ fun main() {
 
 public fun oneSheet() : MutableList<Int> {
     val lotto = Lotto()
-    var user : MutableList<Int>
+    var user : MutableList<Int> = mutableListOf()
     var choose : Int
 
 
