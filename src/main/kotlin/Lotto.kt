@@ -165,4 +165,6 @@ class Lotto {
         }
         println()
     }
+
+
 }
