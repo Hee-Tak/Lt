@@ -2,6 +2,7 @@ fun main() {
     val lotto = Lotto()
     val sheet: MutableList<MutableList<Int>> = mutableListOf()
     while(true){
+        println("1:로또구매\t2:당첨번호확인")
         sheet.add(oneSheet())
     }
     val result = lotto.prizeNumber()
