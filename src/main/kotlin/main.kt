@@ -10,7 +10,13 @@ fun main() {
                 sheet.add(oneSheet())
             }
             2 -> {
-
+                printSheets(sheet)
+            }
+            3 -> {
+                break
+            }
+            else -> {
+                println("올바른 형식으로 입력하세요.")
             }
 
         }
@@ -70,4 +76,13 @@ public fun oneSheet() : MutableList<Int> {
 
     return user
 
+}
+
+public fun printSheets(sheet: MutableList<MutableList<Int>>) {
+    for(list in sheet){
+        for(element in list){
+            print("$element ")
+        }
+        println()
+    }
 }
