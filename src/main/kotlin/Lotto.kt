@@ -159,7 +159,7 @@ class Lotto {
     }*/
     //================================================================================================
 
-    public fun printLotto(lotto: List<Int>) {
+    public fun printLotto(lotto: MutableList<Int>) {
         for(element in lotto){
             print("${element}  ")
         }

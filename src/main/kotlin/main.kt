@@ -2,8 +2,18 @@ fun main() {
     val lotto = Lotto()
     val sheet: MutableList<MutableList<Int>> = mutableListOf()
     while(true){
-        println("1:로또구매\t2:당첨번호확인")
-        sheet.add(oneSheet())
+        println("1:로또구매\t2:보유중인Sheets확인\t3:당첨번호확인")
+        print("=> ")
+        val choose = readLine().toString().trim().toInt()
+        when(choose){
+            1 -> {
+                sheet.add(oneSheet())
+            }
+            2 -> {
+
+            }
+
+        }
     }
     val result = lotto.prizeNumber()
 
