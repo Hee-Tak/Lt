@@ -80,10 +80,10 @@ public fun oneSheet() : MutableList<Int> {
 }
 
 public fun printSheets(sheet: MutableList<MutableList<Int>>) {
+    var count = 1
     for(list in sheet){
-        var count = 1
+        print("${count++}번 )")
         for(element in list){
-            print("${count++}번 )")
             print("$element ")
         }
         println()
