@@ -63,7 +63,8 @@ public fun oneSheet() : MutableList<Int> {
 
             3 -> {
                 println("<반자동>")
-                //반자동만들기
+                user = lotto.halfAuto() //반자동
+                lotto.printLotto(user)
                 break
             }
 

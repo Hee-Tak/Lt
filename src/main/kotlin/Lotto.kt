@@ -153,10 +153,38 @@ class Lotto {
 
     //================================================================================================
 
-    /*public fun halfAuto(): List<Int>{
+    public fun halfAuto(): MutableList<Int>{
         val lottoNumbers = mutableListOf<Int>()
 
-    }*/
+        print("1~45의 숫자 1~6개 입력 : ")
+        val input: String? = readlnOrNull()
+        val arr = input?.split(" ")?.filter{ it.isNotBlank() && it.matches(Regex("-?\\d+")) }
+
+        if (arr != null) {
+            arr.map { it.toInt() }.forEach {
+                if(it in 1..45 && it !in lottoNumbers && lottoNumbers.size < 6){
+                    lottoNumbers.add(it)
+                }
+                if(lottoNumbers.size >= 6){
+                    return@forEach
+                }
+            }
+        }
+
+        if(lottoNumbers.size < 6){
+            while(lottoNumbers.size < 6){
+                val randomNumber = Random().nextInt(45) + 1
+
+                if(!lottoNumbers.contains(randomNumber)){
+                    lottoNumbers.add(randomNumber)
+                }
+            }
+        }
+
+
+        lottoNumbers.sort()
+        return lottoNumbers
+    }
     //================================================================================================
 
     public fun printLotto(lotto: MutableList<Int>) {
