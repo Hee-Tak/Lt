@@ -92,13 +92,15 @@ public fun printSheets(sheet: MutableList<MutableList<Int>>) {
 }
 
 public fun checkLotto(sheet: MutableList<MutableList<Int>>, result: MutableList<Int>) {
+    var num = 1
     for(list in sheet){
         var count = 0
         for(element in list){
             if(element in result){
                 count++
             }
+
         }
-        print("${count}개 일치")
+        println("${num++}) ${count}개 일치")
     }
 }
