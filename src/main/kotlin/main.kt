@@ -108,3 +108,4 @@ public fun checkLotto(sheet: MutableList<MutableList<Int>>, result: MutableList<
         println("\t${count}개 일치")
     }
 }
+
