@@ -23,6 +23,7 @@ fun main() {
     }
     val result = lotto.prizeNumber()
     lotto.printLotto(result)
+    checkLotto(sheet, result)
 }
 
 public fun oneSheet() : MutableList<Int> {
