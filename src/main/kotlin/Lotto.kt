@@ -44,10 +44,12 @@ class Lotto {
 
                 else -> {
                     println("잘못된 입력입니다.")
+                    lottoNumbers = AutoLotto()
                 }
             }
         } catch (e: NumberFormatException){
             println("숫자 형식이 올바르지 않습니다.")
+            lottoNumbers = AutoLotto()
         }
         return lottoNumbers
     }
@@ -74,6 +76,7 @@ class Lotto {
             println("< 현재 입력된 번호 >")
             printLotto(lottoNumbers)
         }
+        println("< 최종 번호 >")
         lottoNumbers.sort()
         return lottoNumbers
     }
