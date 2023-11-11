@@ -22,7 +22,7 @@ fun main() {
         }
     }
     val result = lotto.prizeNumber()
-
+    lotto.printLotto(result)
 }
 
 public fun oneSheet() : MutableList<Int> {
@@ -87,5 +87,17 @@ public fun printSheets(sheet: MutableList<MutableList<Int>>) {
             print("$element ")
         }
         println()
+    }
+}
+
+public fun checkLotto(sheet: MutableList<MutableList<Int>>, result: MutableList<Int>) {
+    for(list in sheet){
+        var count = 0
+        for(element in list){
+            if(element in result){
+                count++
+            }
+        }
+        print("${count}개 일치")
     }
 }
