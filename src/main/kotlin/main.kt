@@ -2,7 +2,10 @@ fun main() {
     val lotto = Lotto()
     val sheet: MutableList<MutableList<Int>> = mutableListOf()
     while(true){
-        println("1:로또구매\t2:보유중인Sheets확인\t3:당첨번호확인")
+        println()
+        println("==============================================")
+        println("[1:로또구매\t2:보유중인Sheets확인\t3:당첨번호확인]")
+        println("==============================================")
         print("=> ")
         val choose = readLine().toString().trim().toInt()
         when(choose){
@@ -10,7 +13,11 @@ fun main() {
                 sheet.add(oneSheet())
             }
             2 -> {
-                printSheets(sheet)
+                if(sheet.isNotEmpty()) {
+                    printSheets(sheet)
+                } else {
+                    println("비어있습니다.")
+                }
             }
             3 -> {
                 break
@@ -36,7 +43,7 @@ public fun oneSheet() : MutableList<Int> {
 
 
     while(true){
-        println("1:자동 \t 2:수동 \t 3:반자동")
+        println("[1:자동 \t 2:수동 \t 3:반자동]")
         print("=> ")
         val temp_choose = readLine().toString().trim()
         try {
