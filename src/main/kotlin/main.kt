@@ -10,7 +10,18 @@ fun main() {
         val choose = readLine().toString().trim().toInt()
         when(choose){
             1 -> {
-                sheet.add(oneSheet())
+                print("필요한 매수를 입력하세요. => ")
+                val num = readLine().toString().trim()
+                try{
+                    val n = num.toInt()
+                    println("${n}장 출력됩니다.")
+                    for(i in 1..n){
+                        sheet.add(oneSheet())
+                    }
+                } catch(e: NumberFormatException){
+                    println("잘못된 입력으로 한장만 출력됩니다.")
+                    sheet.add(oneSheet())
+                }
             }
             2 -> {
                 if(sheet.isNotEmpty()) {
