@@ -112,7 +112,7 @@ public fun checkLotto(sheet: MutableList<MutableList<Int>>, result: MutableList<
                 count++
             }
         }
-        println("\t${count}개 일치")
+        println("\t\t${count}개 일치")
     }
 }
 
