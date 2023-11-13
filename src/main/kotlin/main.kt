@@ -3,9 +3,9 @@ fun main() {
     val sheet: MutableList<MutableList<Int>> = mutableListOf()
     while(true){
         println()
-        println("==============================================")
-        println("[1:로또구매\t2:보유중인Sheets확인\t3:당첨번호확인]")
-        println("==============================================")
+        println("========================================================")
+        println(" [1:로또구매\t2:보유중인Sheets확인\t3:당첨번호확인\t4:종료]")
+        println("========================================================")
         print("=> ")
         val choose = readLine().toString().trim().toInt()
         when(choose){
@@ -20,7 +20,15 @@ fun main() {
                 }
             }
             3 -> {
-                break
+                val result = lotto.prizeNumber()
+                println("\t\t<당첨번호>")
+                lotto.printLotto(result)
+
+                println("\t\t<결과>")
+                checkLotto(sheet, result)
+            }
+            4 -> {
+                return
             }
             else -> {
                 println("올바른 형식으로 입력하세요.")
@@ -28,12 +36,7 @@ fun main() {
 
         }
     }
-    val result = lotto.prizeNumber()
-    println("\t\t<당첨번호>")
-    lotto.printLotto(result)
 
-    println("\t\t<결과>")
-    checkLotto(sheet, result)
 }
 
 public fun oneSheet() : MutableList<Int> {
