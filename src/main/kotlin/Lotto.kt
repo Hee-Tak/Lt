@@ -48,7 +48,7 @@ class Lotto {
                 }
             }
         } catch (e: NumberFormatException){
-            println("숫자 형식이 올바르지 않습니다.")
+            println("숫자 형식이 올바르지 않습니다. <자동>으로 변경됩니다.")
             lottoNumbers = AutoLotto()
         }
         return lottoNumbers
