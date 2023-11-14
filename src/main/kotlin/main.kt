@@ -55,7 +55,6 @@ public fun oneSheet() : MutableList<Int> {
     var user : MutableList<Int> = mutableListOf()
     var choose : Int
 
-
     while(true){
         println("[1:자동 \t 2:수동 \t 3:반자동]")
         print("=> ")
