@@ -141,7 +141,7 @@ class Lotto {
 
 
     //================================================================================================
-    public fun prizeNumber(): MutableList<Int> {   //당첨번호 6개 + 보너스 1개
+    public fun prizeNumber(): Pair<MutableList<Int>, Int> {   //당첨번호 6개 + 보너스 1개
         val lottoNumbers = mutableListOf<Int>()
         val random = Random()
         while(lottoNumbers.size < 6){
@@ -152,16 +152,17 @@ class Lotto {
             }
         }
 
+        var bonus: Int
+        while(true){
+            val b = random.nextInt(45) + 1
 
-        while(lottoNumbers.size < 7){
-            val bonus = random.nextInt(45) + 1
-
-            if(!lottoNumbers.contains(bonus)){
-                lottoNumbers.add(bonus)
+            if(!lottoNumbers.contains(b)){
+                bonus = b
+                break
             }
         }
         lottoNumbers.sort()
-        return lottoNumbers
+        return Pair(lottoNumbers, bonus)
     }
 
     //================================================================================================

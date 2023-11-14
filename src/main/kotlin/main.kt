@@ -31,7 +31,7 @@ fun main() {
                 }
             }
             3 -> {
-                val result = lotto.prizeNumber()
+                val result = lotto.prizeNumber().first
                 println("\t\t<당첨번호>")
                 lotto.printLotto(result)
 
