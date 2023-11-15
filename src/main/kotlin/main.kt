@@ -129,3 +129,10 @@ public fun checkLotto(sheet: MutableList<MutableList<Int>>, result: MutableList<
     }
 }
 
+
+/*
+public fun rankLotto(){
+
+}
+
+*/
