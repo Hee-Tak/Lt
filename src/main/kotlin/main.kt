@@ -131,19 +131,19 @@ public fun checkLotto(sheet: MutableList<MutableList<Int>>, prize: Pair<MutableL
         }
         //println("\t\t${count}개 일치")
         if(count == 6){
-            println("\t\t1등")
+            println("\t\t\t1등")
         } else if(count == 5){
             if(bonus in list){
-                println("\t\t2등")
+                println("\t\t\t2등")
             } else {
-                println("\t\t3등")
+                println("\t\t\t3등")
             }
         } else if(count == 4){
-            println("\t\t4등")
+            println("\t\t\t4등")
         } else if(count == 3){
-            println("\t\t5등")
+            println("\t\t\t5등")
         } else {
-            println("\t\t꽝")
+            println("\t\t\t꽝")
         }
 
     }
