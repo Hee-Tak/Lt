@@ -31,9 +31,9 @@ fun main() {
                 }
             }
             3 -> {
-                val result = lotto.prizeNumber().first
+                val result = lotto.prizeNumber()
                 println("\t\t<당첨번호>")
-                lotto.printLotto(result)
+                lotto.printLotto(result.first)
 
                 println("\t\t<결과>")
                 checkLotto(sheet, result)
@@ -131,19 +131,19 @@ public fun checkLotto(sheet: MutableList<MutableList<Int>>, prize: Pair<MutableL
         }
         //println("\t\t${count}개 일치")
         if(count == 6){
-            println("1등")
+            println("\t\t1등")
         } else if(count == 5){
             if(bonus in list){
-                println("2등")
+                println("\t\t2등")
             } else {
-                println("3등")
+                println("\t\t3등")
             }
         } else if(count == 4){
-            println("4등")
+            println("\t\t4등")
         } else if(count == 3){
-            println("5등")
+            println("\t\t5등")
         } else {
-            println("꽝")
+            println("\t\t꽝")
         }
 
     }
