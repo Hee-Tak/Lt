@@ -1,10 +1,13 @@
 fun main() {
+
+    var money: Int = 100000 //기본 10만원
+
     val lotto = Lotto()
     val sheet: MutableList<MutableList<Int>> = mutableListOf()
     while(true){
         println()
         println("========================================================")
-        println(" [1:로또구매\t2:보유중인Sheets확인\t3:당첨번호확인\t4:종료]")
+        println(" [1:로또구매(장당 1.0)\t2:보유중인Sheets확인\t3:당첨번호확인\t4:종료]")
         println("========================================================")
         print("=> ")
         val choose = readLine().toString().trim().toInt()
@@ -17,6 +20,7 @@ fun main() {
                     println("${n}장 출력됩니다.")
                     for(i in 1..n){
                         sheet.add(oneSheet())
+                        money -= 1000
                     }
                 } catch(e: NumberFormatException){
                     println("잘못된 입력으로 한장만 출력됩니다.")
