@@ -1,5 +1,5 @@
 class oneSet {
-    fun onSet() {
+    fun oneSet() {
         var money: Int = 100000 //기본 10만원
 
         val lotto = Lotto()
