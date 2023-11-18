@@ -1,6 +1,7 @@
 class oneSet {
+
+    var money: Int = 100000 //기본 10만원
     fun oneSet() {
-        var money: Int = 100000 //기본 10만원
 
         val lotto = Lotto()
         val sheet: MutableList<MutableList<Int>> = mutableListOf()
@@ -140,16 +141,21 @@ class oneSet {
             //println("\t\t${count}개 일치")
             if(count == 6){
                 println("\t\t\t1등")
+                money += 1952160000
             } else if(count == 5){
                 if(bonus in list){
                     println("\t\t\t2등")
+                    money += 54226666
                 } else {
                     println("\t\t\t3등")
+                    money += 1427017
                 }
             } else if(count == 4){
                 println("\t\t\t4등")
+                money += 50000
             } else if(count == 3){
                 println("\t\t\t5등")
+                money += 5000
             } else {
                 println("\t\t\t꽝")
             }
