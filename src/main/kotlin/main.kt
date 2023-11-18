@@ -41,6 +41,8 @@ fun main() {
 
                 println("\t\t<결과>")
                 checkLotto(sheet, result)
+
+                return
             }
             4 -> {
                 return
