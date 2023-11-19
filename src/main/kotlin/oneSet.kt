@@ -7,9 +7,9 @@ class oneSet {
         val sheet: MutableList<MutableList<Int>> = mutableListOf()
         while(true){
             println()
-            println("========================================================")
+            println("===================================================================")
             println(" [1:로또구매(장당 1.0)\t2:보유중인Sheets확인\t3:당첨번호확인\t4:종료]")
-            println("========================================================")
+            println("===================================================================")
             print("=> ")
             val choose = readLine().toString().trim().toInt()
             when(choose){
@@ -140,24 +140,24 @@ class oneSet {
             }
             //println("\t\t${count}개 일치")
             if(count == 6){
-                println("\t\t\t1등")
+                println("\t\t\t\t1등")
                 money += 1952160000
             } else if(count == 5){
                 if(bonus in list){
-                    println("\t\t\t2등")
+                    println("\t\t\t\t2등")
                     money += 54226666
                 } else {
-                    println("\t\t\t3등")
+                    println("\t\t\t\t3등")
                     money += 1427017
                 }
             } else if(count == 4){
-                println("\t\t\t4등")
+                println("\t\t\t\t4등")
                 money += 50000
             } else if(count == 3){
-                println("\t\t\t5등")
+                println("\t\t\t\t5등")
                 money += 5000
             } else {
-                println("\t\t\t꽝")
+                println("\t\t\t\t꽝")
             }
 
         }
