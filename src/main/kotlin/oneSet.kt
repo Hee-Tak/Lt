@@ -1,15 +1,18 @@
+import java.text.NumberFormat
+import java.util.Locale
+
 class oneSet {
 
-    var money: Int = 100000 //기본 10만원
+    var money: Int = 10000 //기본 1만원
     fun oneSet() {
 
         val lotto = Lotto()
         val sheet: MutableList<MutableList<Int>> = mutableListOf()
         while(true){
-            println()
-            println("===================================================================")
-            println(" [1:로또구매(장당 1.0)\t2:보유중인Sheets확인\t3:당첨번호확인\t4:종료]")
-            println("===================================================================")
+            printMoney()
+            println("================================================================================")
+            println(" [1:로또구매(장당 1.0)\t2:보유중인Sheets확인\t3:당첨번호확인\t4:종료\t5:무료충전]")
+            println("================================================================================")
             print("=> ")
             val choose = readLine().toString().trim().toInt()
             when(choose){
@@ -18,14 +21,19 @@ class oneSet {
                     val num = readLine().toString().trim()
                     try{
                         val n = num.toInt()
-                        println("${n}장 출력됩니다.")
-                        for(i in 1..n){
-                            sheet.add(oneSheet())
-                            money -= 1000
+                        if(n*1000 <= money) {
+                            println("${n}장 출력됩니다.")
+                            for (i in 1..n) {
+                                sheet.add(oneSheet())
+                                money -= 1000
+                            }
+                        } else {
+                            val d = n*1000 - money
+                            val temp = NumberFormat.getNumberInstance(Locale.US).format(d)
+                            println("잔액이 부족합니다. 부족한 금액 : ${temp}")
                         }
                     } catch(e: NumberFormatException){
-                        println("잘못된 입력으로 한장만 출력됩니다.")
-                        sheet.add(oneSheet())
+                        println("잘못된 입력입니다. 처음부터 다시 입력하세요.")
                     }
                 }
                 2 -> {
@@ -43,10 +51,14 @@ class oneSet {
                     println("\t\t<결과>")
                     checkLotto(sheet, result)
 
-                    return
+                    sheet.clear() //이번회차 확인했으니 비우고 다음회차.
                 }
                 4 -> {
                     return
+                }
+
+                5 -> {
+                    money += 5000
                 }
                 else -> {
                     println("올바른 형식으로 입력하세요.")
@@ -54,6 +66,9 @@ class oneSet {
 
             }
         }
+
+        printMoney()
+
     }
 
     //========================================================================
@@ -140,22 +155,27 @@ class oneSet {
             }
             //println("\t\t${count}개 일치")
             if(count == 6){
-                println("\t\t\t\t1등")
-                money += 1952160000
+                val prizeMoney =1952160000
+                println("\t\t\t\t1등\t+${prizeMoney}")
+                money += prizeMoney
             } else if(count == 5){
                 if(bonus in list){
-                    println("\t\t\t\t2등")
-                    money += 54226666
+                    val prizeMoney = 54226666
+                    println("\t\t\t\t2등\t+${prizeMoney}")
+                    money += prizeMoney
                 } else {
-                    println("\t\t\t\t3등")
-                    money += 1427017
+                    val prizeMoney = 1427017
+                    println("\t\t\t\t3등\t+${prizeMoney}")
+                    money += prizeMoney
                 }
             } else if(count == 4){
-                println("\t\t\t\t4등")
-                money += 50000
+                val prizeMoney = 50000
+                println("\t\t\t\t4등\t+${prizeMoney}")
+                money += prizeMoney
             } else if(count == 3){
-                println("\t\t\t\t5등")
-                money += 5000
+                val prizeMoney = 5000
+                println("\t\t\t\t5등\t+${prizeMoney}")
+                money += prizeMoney
             } else {
                 println("\t\t\t\t꽝")
             }
@@ -169,6 +189,11 @@ class oneSet {
     //4등 : 4개 번호 일치 (당첨확률 : 1 / 733 || 조합 개수 11,115) (5만원)
     //5등 : 3개 번호 일치 (당첨확률 : 1 / 45 || 조합 개수 182,780) (5천원)
 
+    public fun printMoney(){
+        val temp = NumberFormat.getNumberInstance(Locale.US).format(money)
+
+        println("현재 지니고 있는 금액 : ${temp} 원")
+    }
 
 
 }
