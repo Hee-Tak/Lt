@@ -60,6 +60,27 @@ class oneSet {
                 5 -> {
                     money += 5000
                 }
+
+                6 -> {
+                    print("필요한 매수를 입력하세요. => ")
+                    val num = readLine().toString().trim()
+                    try{
+                        val n = num.toInt()
+                        if(n*1000 <= money) {
+                            println("${n}장 출력됩니다.")
+                            for (i in 1..n) {
+                                sheet.add(lotto.AutoLotto())
+                                money -= 1000
+                            }
+                        } else {
+                            val d = n*1000 - money
+                            val temp = NumberFormat.getNumberInstance(Locale.US).format(d)
+                            println("잔액이 부족합니다. 부족한 금액 : ${temp}")
+                        }
+                    } catch(e: NumberFormatException){
+                        println("잘못된 입력입니다. 처음부터 다시 입력하세요.")
+                    }
+                }
                 else -> {
                     println("올바른 형식으로 입력하세요.")
                 }
