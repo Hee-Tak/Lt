@@ -2,7 +2,6 @@ import java.text.NumberFormat
 import java.util.Locale
 
 class oneSet {
-
     var money: Int = 10000 //기본 1만원
     fun oneSet() {
 
