@@ -9,3 +9,8 @@ fun main() {
 
 
 
+fun JDBC_TEST() {
+    //JDBC 연결 정보
+    val jdbcURL = "jdbc:mysql://localhost:3306/mysql"
+
+}
