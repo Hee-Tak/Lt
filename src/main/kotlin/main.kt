@@ -12,5 +12,10 @@ fun main() {
 fun JDBC_TEST() {
     //JDBC 연결 정보
     val jdbcURL = "jdbc:mysql://localhost:3306/mysql"
+    val user = "your_username"
+    val password ="your_password"
+
+    //JDBC 드라이버 로드
+    Class.forName("com.mysql.cj.jdbc.Driver")
 
 }
