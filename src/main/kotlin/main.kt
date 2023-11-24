@@ -1,5 +1,6 @@
 import java.sql.Connection
 import java.sql.DriverManager
+import java.sql.PreparedStatement
 
 fun main() {
 
@@ -24,4 +25,14 @@ fun JDBC_TEST() {
     //데이터베이스 연결
     val connection: Connection = DriverManager.getConnection(jdbcURL, user, password)
 
+    //데이터베이스에 데이터 추가
+    insertData(connection, 100000)
+
+}
+
+fun insertData(connection: Connection, money: Int) {
+    val insertQuery = "INSERT INTO Lotto (money) VALUES (?)"
+
+    //PreparedStatement 사용하여 SQL 쿼리 실행
+    val preparedStatement: PreparedStatement
 }
