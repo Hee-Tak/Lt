@@ -1,3 +1,6 @@
+import java.sql.Connection
+import java.sql.DriverManager
+
 fun main() {
 
     oneSet().oneSet()   //oneSet 클래스의 oneSet 함수 호출(원래는 생성자 불러내는 느낌으로 하려고 했는데..)
@@ -17,5 +20,8 @@ fun JDBC_TEST() {
 
     //JDBC 드라이버 로드
     Class.forName("com.mysql.cj.jdbc.Driver")
+
+    //데이터베이스 연결
+    val connection: Connection = DriverManager.getConnection(jdbcURL, user, password)
 
 }
