@@ -28,11 +28,24 @@ fun JDBC_TEST() {
     //데이터베이스에 데이터 추가
     insertData(connection, 100000)
 
+    //데이터베이스에서 데이터 조회
+    queryData(connection)
+
+    //연결 닫기
+    connection.close()
 }
 
 fun insertData(connection: Connection, money: Int) {
     val insertQuery = "INSERT INTO Lotto (money) VALUES (?)"
 
     //PreparedStatement 사용하여 SQL 쿼리 실행
-    val preparedStatement: PreparedStatement
+    val preparedStatement: PreparedStatement = connection.prepareStatement(insertQuery)
+    preparedStatement.setInt(1, money)
+    preparedStatement.executeUpdate()
+
+    println("Data inserted successfully.")
+}
+
+fun queryData(connection: Connection) {
+    val selectQuery = "SELECT * FROM Lotto"
 }
