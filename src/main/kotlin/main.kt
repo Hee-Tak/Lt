@@ -37,7 +37,7 @@ fun JDBC_TEST(money: Int) {
 
 
     while(true){
-
+        break
     }
 
     //데이터베이스에서 데이터 조회
