@@ -1,6 +1,7 @@
 import java.sql.Connection
 import java.sql.DriverManager
 import java.sql.PreparedStatement
+import java.sql.ResultSet
 
 fun main() {
 
@@ -48,4 +49,19 @@ fun insertData(connection: Connection, money: Int) {
 
 fun queryData(connection: Connection) {
     val selectQuery = "SELECT * FROM Lotto"
+
+    //PreparedStatement 사용하여 SQL 쿼리 실행
+    val preparedStatement: PreparedStatement = connection.prepareStatement(selectQuery)
+    val resultSet : ResultSet = preparedStatement.executeQuery()
+
+    //결과 출력
+    while(resultSet.next()){
+        val id = resultSet.getInt("id")
+        val money = resultSet.getInt("money")
+
+        println("ID: $id, Money: $money")
+    }
+
+    resultSet.close()
+    preparedStatement.close()
 }
